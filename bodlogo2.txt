@@ -1,0 +1,66 @@
+def check_fifth_element_and_length(lst):
+    """
+    Check if the list has length 8 and the fifth element occurs exactly 3 times.
+    
+    Args:
+        lst: List of integers
+        
+    Returns:
+        bool: True if length is 8 and fifth element appears 3 times, False otherwise
+    """
+    # Check if the list has exactly 8 elements
+    if len(lst) != 8:
+        return False
+    
+    # Get the fifth element (index 4, since we start counting from 0)
+    fifth_element = lst[4]
+    
+    # Count how many times the fifth element appears in the list
+    count = lst.count(fifth_element)
+    
+    # Return True if the fifth element appears exactly 3 times
+    return count == 3
+
+
+# Test the function with the provided examples
+def test_function():
+    test_cases = [
+        ([19, 19, 15, 5, 5, 5, 1, 2], True),
+        ([19, 15, 5, 7, 5, 5, 2], False),
+        ([11, 12, 14, 13, 14, 13, 15, 14], True),
+        ([19, 15, 11, 7, 5, 6, 2], False)
+    ]
+    
+    print("Testing the function:")
+    print("-" * 50)
+    
+    for i, (input_list, expected) in enumerate(test_cases, 1):
+        result = check_fifth_element_and_length(input_list)
+        status = "✓" if result == expected else "✗"
+        
+        print(f"Test {i}: {status}")
+        print(f"Input: {input_list}")
+        print(f"Length: {len(input_list)}")
+        
+        if len(input_list) >= 5:
+            fifth_elem = input_list[4]
+            count = input_list.count(fifth_elem)
+            print(f"Fifth element: {fifth_elem}")
+            print(f"Count of fifth element: {count}")
+        else:
+            print("Fifth element: N/A (list too short)")
+            
+        print(f"Expected: {expected}, Got: {result}")
+        print("-" * 50)
+
+
+# Run the tests
+if __name__ == "__main__":
+    test_function()
+    
+    # Interactive example
+    print("\nTry your own input:")
+    print("Example usage:")
+    my_list = [19, 19, 15, 5, 5, 5, 1, 2]
+    result = check_fifth_element_and_length(my_list)
+    print(f"check_fifth_element_and_length({my_list}) = {result}")
