@@ -1,13 +1,4 @@
 def check_fifth_element_and_length(lst):
-    """
-    Check if the list has length 8 and the fifth element occurs exactly 3 times.
-    
-    Args:
-        lst: List of integers
-        
-    Returns:
-        bool: True if length is 8 and fifth element appears 3 times, False otherwise
-    """
 
     if len(lst) != 8:
         return False
@@ -47,3 +38,4 @@ if __name__ == "__main__":
     my_list = [19, 19, 15, 5, 5, 5, 1, 2]
     result = check_fifth_element_and_length(my_list)
    print(f"check_fifth_element_and_length({my_list}) = {result}")
+
